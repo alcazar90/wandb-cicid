@@ -1,14 +1,9 @@
 name: GitHub Actions Demo
-
-# events under the action is trigger, see on GitHub Actions docs: events that trigger workflows
 on: [push]
-
 jobs:
         my-first-job:
                 runs-on: ubuntu-latest
                 steps:
                         - name: hello
-                        # everytime an action is trigger there are a github context with a lot of variables that you
-                        # can call using ${{ }} such as:
                         - run: echo "The Hello World job was automatically triggered by a ${{ github._event_name }} event."
 
