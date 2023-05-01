@@ -4,6 +4,14 @@ jobs:
         my-first-job:
                 runs-on: ubuntu-latest
                 steps:
+                        # refers to the official workflow github actions/checkout; with this action you can have access to files on your repo
+                        - uses: actions/checkout@v3
                         - name: hello
                           run: echo "The Hello World job was automatically triggered by a ${{ github._event_name }} event."
+                        - name: run python script
+                          # with github actions/checkout pip install is awareness of the requirements.txt file
+                          run: |
+                            pip install -r requirements.txt
+                            python ci.py
+
 
